@@ -2,13 +2,13 @@ import java.io.*;
 import java.net.*;
 import javax.crypto.SecretKey;
 
-public class Client {
+public class client {
     public static void main(String[] args) {
         try {
             Socket socket = new Socket("localhost", 8080);
-            SecretKey key = AESEncUtil.getAESKey();
+            SecretKey key = AESEncryptionUtil.getAESKey();
             String message = "Hello Server...";
-            String encryptedMessage = AESEncUtil.encrypt(message, key);
+            String encryptedMessage = AESEncryptionUtil.encrypt(message, key);
             System.out.println("Encrypted Message: " + encryptedMessage);
 
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
