@@ -16,9 +16,9 @@ public class server {
                 String encryptedMessage = in.readLine();
                 System.out.println("Received encrypted message: " + encryptedMessage);
 
-                SecretKey key = AESEncUtil.getAESKey();
+                SecretKey key = AESEncryptionUtil.getAESKey();
                 try {
-                    String decryptedMessage = AESEncUtil.decrypt(encryptedMessage, key);
+                    String decryptedMessage = AESEncryptionUtil.decrypt(encryptedMessage, key);
                     System.out.println("Decrypted Message: " + decryptedMessage);
                     
                     PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
